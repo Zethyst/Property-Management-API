@@ -7,6 +7,12 @@ from schema.property_helper import property_helper
 
 property_router = APIRouter()
 
+@property_router.get(
+    "/",
+)
+async def read_root():
+    return {"greetings": "Welcome to Property Management System!"}
+
 #! Create a new property
 @property_router.post("/properties", response_model=List[PropertyResponse])
 async def create_new_property(property: Property):

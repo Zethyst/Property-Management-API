@@ -1,6 +1,13 @@
 from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
 
-MONGO_URI = "mongodb+srv://zethyst:akshat2002@cluster0.wdelwkx.mongodb.net"
+# pip install python-dotenv
+
+load_dotenv()
+
+
+MONGO_URI = os.getenv("MONGO_URI")
 client = MongoClient(MONGO_URI)
 
 #! Created dummy database in mongoDB
